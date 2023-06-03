@@ -1,0 +1,11 @@
+let Start = 10 and End = 300
+in let mod x y = x - (y * (x / y)) in
+let rec reverse_num(t,r) = 
+t eq 0 -> r | reverse_num(t/10,r*10 + mod t 10) in
+let is_palindrome N = N eq reverse_num(N,0) in
+let A = nil in
+let append(x,y) = is_palindrome y -> (x aug y) | x in
+let get_palindromes(from,to) = Loop(A,from,to)
+where rec Loop(A,s,e) = 
+e ls s -> A | Loop(append(A,s),s+1,e)
+in Print(get_palindromes(Start,End))
