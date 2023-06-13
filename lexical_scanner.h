@@ -13,7 +13,8 @@ enum TokenType
     OPERATOR,   // 2
     STRING,     // 3
     DELETE,     // 4
-    PUNCTION    // 5
+    PUNCTION,   // 5
+    NAN         // 6
 };
 
 // Define a struct to represent a token

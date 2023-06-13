@@ -5,10 +5,10 @@ CXX = g++
 CXXFLAGS = -Wall -Wextra -std=c++11
 
 # Define the name of the executable
-EXE = lexical_scanner
+EXE = ast
 
 # Define the source files
-SRCS = main.cpp lexical_scanner.cpp
+SRCS = test5.cpp ast.cpp lexical_scanner.cpp
 
 # Define the object files
 OBJS = $(SRCS:.cpp=.o)
