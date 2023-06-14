@@ -1,1 +1,1 @@
-let T=('a','b',true,3) in Print( T 3, T 2)
+let x = 1 in Print x
