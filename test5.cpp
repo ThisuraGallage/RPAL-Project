@@ -1,9 +1,10 @@
-#include "ast.h"
+#include "st.h"
 #include <iostream>
 
 int main()
 {
-    Node *root = getAST("1.txt");
+
+    Node *root = getST("1.txt");
     printAST(root);
     return 0;
 }

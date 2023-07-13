@@ -1,5 +1,8 @@
 #include "st.h"
 
+// the binary tree is a first-child, next-sibling tree. So change nodes according to it.
+
+// add functions for each node required by the cse machine.
 Node *standerdize_let(Node *node)
 {
     if (node == nullptr)
@@ -29,9 +32,7 @@ void postOrderTraversal(Node *node)
     {
         node = standerdize_let(node);
     }
-
-    // You can perform additional operations on the current node if needed
-    // based on its TokenType or other properties.
+    // add else conditions for each function created above.
 }
 
 Node *standerdize(Node *node)
