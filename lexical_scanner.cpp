@@ -33,6 +33,15 @@ Token getNextToken(string &input)
             i++;
         }
     }
+    // Check if the next token is a comment
+    else if (input.substr(i, 2) == "//")
+    {
+        token.type = DELETE;
+        while (input[i] != '\n')
+        {
+            i++;
+        }
+    }
     // Check if the next token is an integer
     else if (isdigit(input[i]))
     {
@@ -80,13 +89,6 @@ Token getNextToken(string &input)
             i++;
         }
     }
-    // Check if the next token is a comment
-    else if (input.substr(i, 2) == "//")
-    {
-        token.type = DELETE;
-        while (input[i] != '\n')
-            i++;
-    }
     // Check if the next token is punctuation
     else if (input[i] == '(' || input[i] == ')' || input[i] == ';' || input[i] == ',')
     {
@@ -127,6 +129,5 @@ vector<Token> tokenizeFile(string fileName)
         if (token.type != DELETE)
             tokens.push_back(token);
     }
-
     return tokens;
 }

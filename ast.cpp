@@ -27,7 +27,7 @@ void Read(string expected)
 {
     if (next_token.value != expected)
     {
-        cout << "Error: unexpected token" << endl;
+        cout << "Error: unexpected token " << endl;
         exit(1);
     }
     if (token_index >= (int)tokens.size())
@@ -469,6 +469,7 @@ void Vl()
     {
         n++;
         Read(",");
+        nodeStack.push(new Node(next_token.value, next_token.type));
         Read(next_token.value);
     }
 
@@ -498,6 +499,8 @@ void Vb()
         }
         else
         {
+            nodeStack.push(new Node(next_token.value, next_token.type));
+            Read(next_token.value);
             Vl();
             Read(")");
         }
@@ -540,13 +543,14 @@ Node *getAST(string filename)
 
     if (token.type == IDENTIFIER)
     {
-        if ((token.value == "let" || token.value == "fn") && isKeyWord(token.value))
+        if ((token.value == "let" || token.value == "fn" || token.value == "(") && isKeyWord(token.value))
         {
             next_token = token;
         }
     }
     else
     {
+
         cout << "Error: unexpected token" << endl;
         exit(1);
     }
