@@ -1,5 +1,9 @@
-//aaaa
-let x = 1 
-// ppp
-in Print(x)
+((Print(1)
+))
+
+
+
+
+
+
 

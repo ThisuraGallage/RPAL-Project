@@ -540,20 +540,7 @@ Node *getAST(string filename)
     tokens = tokenizeFile(filename);
 
     Token token = tokens[token_index++];
-
-    if (token.type == IDENTIFIER)
-    {
-        if ((token.value == "let" || token.value == "fn" || token.value == "(") && isKeyWord(token.value))
-        {
-            next_token = token;
-        }
-    }
-    else
-    {
-
-        cout << "Error: unexpected token" << endl;
-        exit(1);
-    }
+    next_token = token;
 
     E();
 
