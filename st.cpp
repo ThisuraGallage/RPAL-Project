@@ -2,7 +2,7 @@
 
 // the binary tree is a first-child, next-sibling tree. So change nodes according to it.
 
-// add functions for each node required by the cse machine.
+// add functions for each node required by the cse machine. kk
 Node *standerdize_let(Node *node)
 {
     if (node == nullptr)
